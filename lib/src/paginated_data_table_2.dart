@@ -170,6 +170,7 @@ class PaginatedDataTable2 extends StatefulWidget {
     this.dataRowHeight = kMinInteractiveDimension,
     this.headingRowHeight = 56.0,
     this.headingRowColor,
+    this.headingTextStyle,
     this.horizontalMargin = 24.0,
     this.columnSpacing = 56.0,
     this.dividerThickness,
@@ -215,6 +216,8 @@ class PaginatedDataTable2 extends StatefulWidget {
           }
           return true;
         }());
+
+  final TextStyle? headingTextStyle;
 
   final bool wrapInCard;
 
@@ -710,6 +713,7 @@ class PaginatedDataTable2State extends State<PaginatedDataTable2> {
         constraints: BoxConstraints(minWidth: constraints.minWidth),
         child: DataTable2(
           key: _tableKey,
+          headingTextStyle: widget.headingTextStyle,
           columns: widget.columns,
           sortColumnIndex: widget.sortColumnIndex,
           sortAscending: widget.sortAscending,
